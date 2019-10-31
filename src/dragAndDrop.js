@@ -9,7 +9,6 @@ let drop = (e, elem) => {
 };
 
 let drag = e => {
-  console.log(e.target.value);
   e.dataTransfer.setData("text/plain", e.target.id);
 };
 

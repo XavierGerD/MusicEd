@@ -1,0 +1,20 @@
+.empty {
+  width: 20px;
+  height: 75px;
+  margin-right: 15px;
+}
+
+.missingNote {
+  width: 30px;
+  border: 1px solid black;
+  height: 75px;
+  background-color: #c7c7c7;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+.characterText {
+  margin-right: 17px;
+  font-size: 60px;
+  font-family: "Bravura";
+}

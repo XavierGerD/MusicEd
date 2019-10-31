@@ -39,6 +39,7 @@ code {
 }
 
 .text {
+  margin-right: -1px;
   font-size: 60px;
   font-family: "Bravura";
 }
@@ -52,59 +53,21 @@ code {
   display: flex;
 }
 
-.keySignature {
-  display: flex;
-}
-
-.keySignatureText {
-  font-size: 60px;
-  font-family: "Bravura";
-  margin-right: 5px;
-}
-
 .barLineText {
   font-size: 60px;
   font-family: "Bravura";
   margin-right: 10px;
 }
 
-.clefText {
-  font-size: 60px;
-  font-family: "Bravura";
-  margin-right: 7px;
-  margin-left: -5px;
-}
-
-.timeSignatureBox {
+.lastStaffSegment {
+  display: flex;
   position: relative;
+  justify-content: flex-end;
+  margin-left: 10px;
 }
-.timeSignatureTextTop {
+
+.lastStaffSegment .text {
   position: absolute;
-  margin-top: -45px;
   font-size: 60px;
   font-family: "Bravura";
-  margin-left: 5px;
-}
-
-.timeSignatureTextBottom {
-  margin-top: -15px;
-  font-size: 60px;
-  font-family: "Bravura";
-  margin-right: 5px;
-  margin-left: 5px;
-}
-
-.missingNote {
-  width: 30px;
-  border: 1px solid black;
-  height: 75px;
-  background-color: #c7c7c7;
-  border-radius: 5px;
-  margin-right: 15px;
-}
-
-.empty {
-  width: 20px;
-  height: 75px;
-  margin-right: 15px;
 }

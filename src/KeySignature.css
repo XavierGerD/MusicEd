@@ -1,0 +1,9 @@
+.keySignature {
+  display: flex;
+}
+
+.keySignatureText {
+  font-size: 60px;
+  font-family: "Bravura";
+  margin-right: 5px;
+}

@@ -1,0 +1,18 @@
+.timeSignatureBox {
+  position: relative;
+}
+.timeSignatureTextTop {
+  position: absolute;
+  margin-top: -45px;
+  font-size: 60px;
+  font-family: "Bravura";
+  margin-left: 5px;
+}
+
+.timeSignatureTextBottom {
+  margin-top: -15px;
+  font-size: 60px;
+  font-family: "Bravura";
+  margin-right: 5px;
+  margin-left: 5px;
+}
