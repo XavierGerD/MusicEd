@@ -25,38 +25,13 @@ code {
 
 .container {
   position: relative;
-  margin-left: 100px;
-}
-
-.staff {
-  position: absolute;
-  display: flex;
-}
-
-.symbols {
-  position: absolute;
-  display: flex;
-}
-
-.text {
-  margin-right: -1px;
-  font-size: 60px;
-  font-family: "Bravura";
-}
-
-.symbols .text {
-  margin-right: 15px;
+  margin-left: 10px;
+  display: grid;
 }
 
 .notehead {
   position: absolute;
   display: flex;
-}
-
-.barLineText {
-  font-size: 60px;
-  font-family: "Bravura";
-  margin-right: 10px;
 }
 
 .lastStaffSegment {
@@ -72,6 +47,7 @@ code {
   font-family: "Bravura";
 }
 
-.staffConfig {
+.barContainer {
   display: flex;
+  flex: auto;
 }

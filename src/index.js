@@ -9,13 +9,13 @@ class Index extends Component {
   render = () => {
     return (
       <div className="main">
-        <div className="boxType2" style={{ width: "1000px", height: "600px" }}>
-          <div className="appBox" style={{ width: "900px", height: "400px" }}>
+        <div className="boxType2" style={{ width: "1800px", height: "800px" }}>
+          <div className="appBox" style={{ width: "1600px", height: "800px" }}>
             <App />
           </div>
-          <div className="appBox" style={{ width: "900px", height: "80px" }}>
+          {/* <div className="appBox" style={{ width: "1600px", height: "80px" }}>
             <Question />
-          </div>
+          </div> */}
         </div>
       </div>
     );

@@ -1,0 +1,20 @@
+.staff {
+  position: absolute;
+  display: flex;
+}
+
+.symbols {
+  position: absolute;
+  display: flex;
+  width: 840px;
+}
+
+.text {
+  margin-right: -1px;
+  font-size: 60px;
+  font-family: "Bravura";
+}
+
+.symbols .text {
+  margin-right: 15px;
+}

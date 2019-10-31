@@ -6,6 +6,7 @@ const G_MAJOR = {
   type: "sharp",
   size: 1
 };
+const E_MINOR = G_MAJOR;
 
 const D_MAJOR = {
   type: "sharp",

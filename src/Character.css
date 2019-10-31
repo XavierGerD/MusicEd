@@ -13,8 +13,40 @@
   margin-right: 15px;
 }
 
-.characterText {
-  margin-right: 17px;
+.bar {
+  display: flex;
+  flex: auto;
+}
+
+.barLineText {
+  display: flex;
+  flex-shrink: 1;
   font-size: 60px;
   font-family: "Bravura";
+}
+
+.note {
+  display: flex;
+  position: relative;
+  flex: auto;
+  justify-content: space-around;
+}
+
+.noteHead {
+  position: absolute;
+  font-size: 60px;
+  font-family: "Bravura";
+}
+
+.stem {
+  position: absolute;
+  margin-top: -2px;
+  padding-left: 16.8px;
+  font-size: 60px;
+  font-family: "Bravura";
+}
+
+.noteHeadBox {
+  display: flex;
+  position: relative;
 }

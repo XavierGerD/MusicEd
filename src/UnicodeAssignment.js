@@ -1,12 +1,16 @@
 let staffSegment = "\uE014";
-let startingBarline = "\uE034";
-let finalBarline = "\uE032";
+
 let stem = "\uE210";
 let blackNoteHead = "\uE0A4";
-let singleBarline = "\uE030";
 let timeSignatureFour = "\uE084";
 let missing;
 let empty;
+
+let barlines = {
+  startingBarline: "\uE034",
+  finalBarline: "\uE032",
+  singleBarline: "\uE030"
+};
 
 let timeSignatureCodes = {
   two: "\uE082",
@@ -40,11 +44,9 @@ let noteheadCodes = {
 
 export {
   staffSegment,
-  startingBarline,
-  finalBarline,
   stem,
   blackNoteHead,
-  singleBarline,
+  barlines,
   clefCodes,
   timeSignatureFour,
   missing,
