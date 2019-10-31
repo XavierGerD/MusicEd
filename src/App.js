@@ -10,10 +10,7 @@ import { allowDrop, drop, drag } from "./dragAndDrop";
 let staffSegment = "\uE014";
 let startingBarline = "\uE034";
 let finalBarline = "\uE032";
-let blackNoteHead = "\uE0A4";
 let singleBarline = "\uE030";
-let missing;
-let empty;
 
 class App extends Component {
   state = {
@@ -47,12 +44,14 @@ class App extends Component {
         </div>
 
         <div className="symbols">
-          <div className="barLineText">
-            {" "}{startingBarline}
+          <div className="staffConfig">
+            <div className="barLineText">
+              {" "}{startingBarline}
+            </div>
+            {<Clef clef={this.state.clef} />}
+            {<KeySignature signature={this.state.keySignature} clef={this.state.clef} />}
+            {<TimeSignature signature={this.state.timeSignature} />}
           </div>
-          {<Clef clef={this.state.clef} />}
-          {<KeySignature signature={this.state.keySignature} clef={this.state.clef} />}
-          {<TimeSignature signature={this.state.timeSignature} />}
           {this.state.text.map(char => {
             return <Character char={char} clef={this.state.clef} />;
           })}

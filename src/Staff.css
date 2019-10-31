@@ -1,0 +1,10 @@
+.systemStaff {
+  margin-left: 285px;
+  font-size: 60px;
+  font-family: "Bravura";
+  -webkit-transform: scaleX(20); /* Safari and Chrome */
+  -moz-transform: scaleX(20); /* Firefox */
+  -ms-transform: scaleX(20); /* IE 9 */
+  -o-transform: scaleX(20); /* Opera */
+  transform: scaleX(20); /* W3C */
+}

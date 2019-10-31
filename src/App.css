@@ -71,3 +71,7 @@ code {
   font-size: 60px;
   font-family: "Bravura";
 }
+
+.staffConfig {
+  display: flex;
+}
