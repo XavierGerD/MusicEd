@@ -2,7 +2,7 @@ import React from "react";
 import { staffSegment } from "./UnicodeAssignment.js";
 import "./Staff.css";
 
-let Staff = ({}) => {
+let Staff = () => {
   return (
     <div className="systemStaff">
       {staffSegment}

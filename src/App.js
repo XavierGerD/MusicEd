@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Page from "./Page.js";
 import appText from "./AppText.js";
-import { KeySignature, G_MAJOR, D_MAJOR, A_MAJOR, F_MAJOR, Bb_MAJOR } from "./KeySignature.js";
+import { G_MAJOR, D_MAJOR, A_MAJOR, F_MAJOR, Bb_MAJOR } from "./KeySignature.js";
 
 class App extends Component {
   state = {

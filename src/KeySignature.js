@@ -56,4 +56,4 @@ let KeySignature = ({ signature, clef }) => {
   );
 };
 
-export { KeySignature, G_MAJOR, D_MAJOR, A_MAJOR, F_MAJOR, Bb_MAJOR };
+export { KeySignature, G_MAJOR, D_MAJOR, A_MAJOR, F_MAJOR, Bb_MAJOR, E_MINOR };

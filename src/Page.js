@@ -1,5 +1,5 @@
 import React from "react";
-import Bars from "./Character.js";
+import Bar from "./Bar.js";
 import Clef from "./Clef.js";
 import TimeSignature from "./TimeSignature.js";
 import System from "./System.js";
@@ -7,41 +7,71 @@ import { barlines } from "./UnicodeAssignment.js";
 import { KeySignature } from "./KeySignature.js";
 import "./Page.css";
 
+let determineClef = hand => {
+  let clef;
+  if (hand === 0) {
+    clef = "treble";
+  } else {
+    clef = "bass";
+  }
+  return clef;
+};
+
 let Page = props => {
+  let staves = [];
   let bars = [];
   let ret = [];
-  let staffConfig = i => {
+  let notes = props.state.text.notes;
+  let instrument = props.state.text.instrument;
+  let staffConfig = (index, hand) => {
+    let clef;
+    if (instrument === "piano") {
+      clef = determineClef(hand);
+    }
     return (
       <div className="staffConfig">
         <div className="barLineText">
           {" "}{barlines.startingBarline}
         </div>
-        {<Clef clef={props.state.clef} />}
-        {<KeySignature signature={props.state.keySignature} clef={props.state.clef} />}
-        {i === 0 ? <TimeSignature signature={props.state.timeSignature} /> : null}
+        {<Clef clef={clef} />}
+        {<KeySignature signature={props.state.keySignature} clef={clef} />}
+        {index === 0 ? <TimeSignature signature={props.state.timeSignature} /> : null}
       </div>
     );
   };
 
-  props.state.text.forEach((arr, i) => {
-    if (i === 0 || (bars.length === 0 && i > 0)) {
-      bars.push(staffConfig(i));
-    }
-    bars.push(<Bars arr={arr} clef={props.state.clef} length={props.state.text.length} index={i} />);
-
-    if (bars.length === props.state.maxBars) {
-      ret.push(<System bars={bars} />);
-      bars = [];
-    }
-    if (i === props.state.text.length - 1) {
-      bars.push(
-        <div className="barLineText">
-          {barlines.finalBarline}
-        </div>
-      );
-      ret.push(<System bars={bars} />);
-    }
+  notes[0].forEach(() => {
+    bars.push([]);
   });
+
+  notes.forEach((barArray, j) => {
+    barArray.forEach((arr, i) => {
+      let clef;
+      if (instrument === "piano") {
+        clef = determineClef(i);
+      }
+      if (j === 0 || (bars[i].length === 0 && j > 0)) {
+        bars[i].push(staffConfig(j, i));
+      }
+      bars[i].push(<Bar arr={barArray[i]} clef={clef} length={notes.length} index={j} />);
+      if (bars[i].length === props.state.maxBars) {
+        staves.push(<System bars={bars[i]} />);
+        bars[i] = [];
+      }
+      if (j === notes.length - 1 && bars[i].length !== 0) {
+        staves.push(<System bars={bars[i]} />);
+      }
+      if (staves.length === notes[0].length) {
+        ret.push(
+          <div className="systemBox">
+            {staves}
+          </div>
+        );
+        staves = [];
+      }
+    });
+  });
+
   return ret;
 };
 

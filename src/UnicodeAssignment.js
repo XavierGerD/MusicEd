@@ -1,8 +1,7 @@
 let staffSegment = "\uE014";
+let ledgerLine = "\uE022";
 
 let stem = "\uE210";
-let blackNoteHead = "\uE0A4";
-let timeSignatureFour = "\uE084";
 let missing;
 let empty;
 
@@ -42,16 +41,24 @@ let noteheadCodes = {
   whole: "\uE0A2"
 };
 
+let restCodes = {
+  whole: "\uE4E3",
+  half: "\uE4E4",
+  quarter: "\uE4E5",
+  eighth: "\uE4E6",
+  sixteenth: "\uE4E7"
+};
+
 export {
   staffSegment,
+  ledgerLine,
   stem,
-  blackNoteHead,
   barlines,
   clefCodes,
-  timeSignatureFour,
   missing,
   empty,
   noteheadCodes,
   accidentalCodes,
-  timeSignatureCodes
+  timeSignatureCodes,
+  restCodes
 };
