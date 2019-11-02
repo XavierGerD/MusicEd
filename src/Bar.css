@@ -21,7 +21,7 @@
 .barLineText {
   display: flex;
   flex-shrink: 1;
-  font-size: 60px;
+  font-size: var(--music-font-size);
   font-family: "Bravura";
 }
 

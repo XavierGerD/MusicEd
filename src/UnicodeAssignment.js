@@ -28,9 +28,9 @@ let accidentalCodes = {
 };
 
 let clefCodes = {
-  treble: ["\uE050", "-15px", "0"],
-  bass: ["\uE062", "-45px", "15"],
-  alto: ["\uE05C", "-30px", "7.5"]
+  treble: { code: "\uE050", position: -0.25, noteOffset: 0 },
+  bass: { code: "\uE062", position: -0.75, noteOffset: 0.25 },
+  alto: { code: "\uE05C", position: -0.5, noteOffset: 0.125 }
 };
 
 let noteheadCodes = {

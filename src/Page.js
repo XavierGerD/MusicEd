@@ -33,8 +33,8 @@ let Page = props => {
         <div className="barLineText">
           {" "}{barlines.startingBarline}
         </div>
-        {<Clef clef={clef} />}
-        {<KeySignature signature={props.state.keySignature} clef={clef} />}
+        {<Clef clef={clef} fontSize={props.state.fontSize} />}
+        {<KeySignature signature={props.state.keySignature} clef={clef} fontSize={props.state.fontSize} />}
         {index === 0 ? <TimeSignature signature={props.state.timeSignature} /> : null}
       </div>
     );

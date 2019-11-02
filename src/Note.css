@@ -1,5 +1,5 @@
 .ledgerLine {
-  font-size: 60px;
+  font-size: var(--music-font-size);
   font-family: "Bravura";
   position: absolute;
 }
@@ -8,7 +8,7 @@
   position: absolute;
   margin-top: -2px;
   padding-left: 16.8px;
-  font-size: 60px;
+  font-size: var(--music-font-size);
   font-family: "Bravura";
 }
 
@@ -18,12 +18,12 @@
   left: 0;
   padding-left: 20.2px;
   padding-top: 55px;
-  font-size: 60px;
+  font-size: var(--music-font-size);
   font-family: "Bravura";
 }
 
 .noteHead {
   position: absolute;
-  font-size: 60px;
+  font-size: var(--music-font-size);
   font-family: "Bravura";
 }

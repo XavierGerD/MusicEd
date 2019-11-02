@@ -28,20 +28,20 @@ const Bb_MAJOR = {
   size: 2
 };
 
-let sharpKeysignaturePositions = [-60, -37.5, -67.5, -45, -22.5, -52.5, -30];
-let flatKeysignaturePositions = [-30, -52.5, -22.5, -67.5, -37.5, -60];
+let sharpKeysignaturePositions = [-1, -0.625, -1.125, -0.75, -0.475, -0.875, -0.5];
+let flatKeysignaturePositions = [-0.5, -0.875, -0.475, -0.75, -1.125, -1];
 
-let KeySignature = ({ signature, clef }) => {
+let KeySignature = ({ signature, clef, fontSize }) => {
   let ret = [];
   let accidental;
-  let offset = clefCodes[clef][2];
+  let offset = clefCodes[clef].noteOffset;
   if (signature.type === "sharp") {
     accidental = sharpKeysignaturePositions;
   } else {
     accidental = flatKeysignaturePositions;
   }
   for (let i = 0; i < signature.size; i++) {
-    let style = { marginTop: accidental[i] + parseInt(offset) };
+    let style = { marginTop: accidental[i] * fontSize + parseInt(offset) };
     ret.push(
       <div className="keySignatureText" style={style}>
         {accidentalCodes[signature.type]}

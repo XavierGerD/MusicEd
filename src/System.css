@@ -6,12 +6,12 @@
 .symbols {
   position: absolute;
   display: flex;
-  width: 840px;
+  width: calc(var(--music-font-size) * (var(--transform-size) / 2));
 }
 
 .text {
   margin-right: -1px;
-  font-size: 60px;
+  font-size: var(--music-font-size);
   font-family: "Bravura";
 }
 
