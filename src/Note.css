@@ -3,3 +3,27 @@
   font-family: "Bravura";
   position: absolute;
 }
+
+.upStem {
+  position: absolute;
+  margin-top: -2px;
+  padding-left: 16.8px;
+  font-size: 60px;
+  font-family: "Bravura";
+}
+
+.downStem {
+  position: absolute;
+  margin-top: -2px;
+  left: 0;
+  padding-left: 20.2px;
+  padding-top: 55px;
+  font-size: 60px;
+  font-family: "Bravura";
+}
+
+.noteHead {
+  position: absolute;
+  font-size: 60px;
+  font-family: "Bravura";
+}

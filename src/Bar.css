@@ -32,20 +32,6 @@
   justify-content: space-around;
 }
 
-.noteHead {
-  position: absolute;
-  font-size: 60px;
-  font-family: "Bravura";
-}
-
-.stem {
-  position: absolute;
-  margin-top: -2px;
-  padding-left: 16.8px;
-  font-size: 60px;
-  font-family: "Bravura";
-}
-
 .noteHeadBox {
   display: flex;
   position: relative;

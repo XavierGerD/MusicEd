@@ -4,7 +4,7 @@ import { allowDrop, drop } from "./dragAndDrop.js";
 import Note from "./Note.js";
 import "./Bar.css";
 
-let Bar = ({ arr, clef, length, index }) => {
+let Bar = ({ arr, clef, length, index, state }) => {
   let barLineType;
   if (index < length - 1) {
     barLineType = barlines.singleBarline;
@@ -17,10 +17,10 @@ let Bar = ({ arr, clef, length, index }) => {
         {" "}{arr.map(char => {
           let style;
           if (char.type === "note") {
-            return <Note char={char} clef={clef} />;
+            return <Note char={char} clef={clef} fontSize={state.fontSize} />;
           }
           if (char.type === "rest") {
-            style = { marginTop: "-30px" };
+            style = { marginTop: state.fontSize / -2 + "px" };
             return (
               <div className="note" style={style}>
                 <div className="noteHead">
@@ -30,7 +30,7 @@ let Bar = ({ arr, clef, length, index }) => {
             );
           }
           if (char.type === "missing") {
-            style = { marginTop: "53px" };
+            style = { marginTop: state.fontSize / 8 * 7 + "px" };
             return <div onDrop={event => drop(event)} onDragOver={event => allowDrop(event)} className="missingNote" style={style} />;
           }
           if (char.type === "empty") {

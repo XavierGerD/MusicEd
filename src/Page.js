@@ -53,7 +53,7 @@ let Page = props => {
       if (j === 0 || (bars[i].length === 0 && j > 0)) {
         bars[i].push(staffConfig(j, i));
       }
-      bars[i].push(<Bar arr={barArray[i]} clef={clef} length={notes.length} index={j} />);
+      bars[i].push(<Bar arr={barArray[i]} clef={clef} length={notes.length} index={j} state={props.state} />);
       if (bars[i].length === props.state.maxBars) {
         staves.push(<System bars={bars[i]} />);
         bars[i] = [];

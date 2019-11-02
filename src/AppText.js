@@ -10,7 +10,7 @@ let appText = {
       ],
       [
         { type: "rest", code: "quarter" },
-        { type: "note", code: "quarter", pitch: [{ note: "A", octave: 2 }, { note: "F", octave: 3 }] },
+        { type: "note", code: "quarter", pitch: [{ note: "F", octave: 3 }, { note: "A", octave: 2 }] },
         { type: "note", code: "quarter", pitch: [{ note: "B", octave: 2 }, { note: "F", octave: 3 }] },
         { type: "note", code: "quarter", pitch: [{ note: "C", octave: 3 }, { note: "A", octave: 3 }] }
       ]
@@ -32,7 +32,6 @@ let appText = {
     [
       [
         { type: "rest", code: "quarter" },
-        // { type: "note", code: "quarter", pitch: [{ note: "A", octave: 4 }, { note: "C", octave: 4 }, { note: "E", octave: 4 }] },
         { type: "note", code: "quarter", pitch: [{ note: "F", octave: 4 }, { note: "A", octave: 4 }, { note: "C", octave: 4 }] },
         { type: "note", code: "quarter", pitch: [{ note: "D", octave: 4 }, { note: "F", octave: 4 }, { note: "A", octave: 4 }] },
         { type: "note", code: "quarter", pitch: [{ note: "E", octave: 4 }, { note: "G", octave: 4 }, { note: "B", octave: 4 }] }

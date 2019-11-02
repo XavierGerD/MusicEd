@@ -6,6 +6,7 @@ import { G_MAJOR, D_MAJOR, A_MAJOR, F_MAJOR, Bb_MAJOR } from "./KeySignature.js"
 
 class App extends Component {
   state = {
+    fontSize: 60,
     maxBars: 4,
     clef: "treble",
     keySignature: D_MAJOR,
