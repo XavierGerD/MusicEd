@@ -5,7 +5,7 @@
 }
 
 :root {
-  --music-font-size: 45px;
+  --music-font-size: 60px;
   --transform-size: 40;
 }
 
@@ -26,12 +26,16 @@ code {
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
   user-select: none; /* Standard */
+  line-height: 0px;
 }
 
 .container {
+  margin-top: var(--music-font-size);
   position: relative;
   margin-left: 10px;
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .notehead {
@@ -42,4 +46,14 @@ code {
 .barContainer {
   display: flex;
   flex: auto;
+}
+
+.submitButton {
+  line-height: 20px;
+}
+
+.title {
+  position: relative;
+  font-size: calc(var(--music-font-size) / 2);
+  margin-bottom: var(--music-font-size);
 }

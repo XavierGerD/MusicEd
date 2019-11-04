@@ -10,7 +10,7 @@ class Index extends Component {
     return (
       <div className="main">
         <div className="boxType2" style={{ width: "1800px", height: "800px" }}>
-          <div className="appBox" style={{ width: "1600px", height: "800px" }}>
+          <div className="appBox" style={{ width: "1600px", height: "800px", display: "flex", justifyContent: "center" }}>
             <App />
           </div>
           {/* <div className="appBox" style={{ width: "1600px", height: "80px" }}>

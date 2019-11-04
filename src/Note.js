@@ -1,6 +1,7 @@
 import React from "react";
 import "./Note.css";
-import { stem, noteheadCodes, clefCodes, ledgerLine } from "./UnicodeAssignment.js";
+import { stem, noteheadCodes, clefCodes, ledgerLine, flagCodes } from "./UnicodeAssignment.js";
+import Beamhook from "./Beamhook.js";
 
 let findOctave = (pitch, i, clef) => {
   let octaveMultiplier;
@@ -29,10 +30,32 @@ let findStemDirection = (middleOfStaff, farthestDown, farthestUp) => {
   if (Math.abs(farthestDown - middleOfStaff) < Math.abs(farthestUp - middleOfStaff)) {
     stemDirection = "downStem";
   }
-  if (Math.abs(farthestDown - middleOfStaff) === Math.abs(farthestUp - middleOfStaff)) {
+  if (Math.abs(farthestDown - middleOfStaff) === Math.abs(farthestUp - middleOfStaff) && Math.abs(farthestDown - middleOfStaff) > 0) {
+    stemDirection = "upStem";
+  }
+  if (Math.abs(farthestDown - middleOfStaff) === Math.abs(farthestUp - middleOfStaff) && Math.abs(farthestDown - middleOfStaff) < 0) {
     stemDirection = "downStem";
   }
+  if (Math.abs(farthestDown - middleOfStaff) === Math.abs(farthestUp - middleOfStaff) && Math.abs(farthestDown - middleOfStaff) === 0) {
+    stemDirection = "upStem";
+  }
   return stemDirection;
+};
+
+let findLedgerLines = (offset, baseOffset) => {
+  let ledgerLines = [];
+  if (offset >= baseOffset * 2) {
+    let numberOfLedgers = Math.floor(offset / (baseOffset * 2));
+    for (let i = 0; i < numberOfLedgers; i++) {
+      let ledgerOffset = { marginTop: (i + 1) * baseOffset * 2 + "px" };
+      ledgerLines.push(
+        <div className="ledgerLine" style={ledgerOffset}>
+          {ledgerLine}
+        </div>
+      );
+    }
+  }
+  return ledgerLines;
 };
 
 let Note = props => {
@@ -49,7 +72,7 @@ let Note = props => {
   let octaveSize = props.fontSize / 8 * 7;
   let middleOfStaff = baseOffset * 3 - octaveSize;
   return (
-    <div className="note">
+    <React.Fragment>
       {props.char.pitch.map((pitch, i) => {
         let octaveMultiplier = findOctave(props.char.pitch, i, props.clef);
 
@@ -57,22 +80,12 @@ let Note = props => {
           parseFloat(clefCodes[props.clef].noteOffset) * props.fontSize +
           parseFloat(pitchOffset[props.char.pitch[i].note]) -
           octaveMultiplier * octaveSize;
+
         let style = {
           marginTop: offset + "px"
         };
 
-        let ledgerLines = [];
-        if (offset >= baseOffset * 2) {
-          let numberOfLedgers = Math.floor(offset / (baseOffset * 2));
-          for (let i = 0; i < numberOfLedgers; i++) {
-            let ledgerOffset = { marginTop: (i + 1) * baseOffset * 2 + "px" };
-            ledgerLines.push(
-              <div className="ledgerLine" style={ledgerOffset}>
-                {ledgerLine}
-              </div>
-            );
-          }
-        }
+        let ledgerLines = findLedgerLines(offset, baseOffset);
 
         let noteHeadsOffsets = [];
         props.char.pitch.map((arr, j) => {
@@ -87,21 +100,55 @@ let Note = props => {
         let farthestDown = Math.max(...noteHeadsOffsets);
         let farthestUp = Math.min(...noteHeadsOffsets);
 
-        let stemDirection = findStemDirection(middleOfStaff, farthestUp, farthestDown);
+        let stemDirection = findStemDirection(middleOfStaff, farthestDown, farthestUp);
+
+        let flag;
+        let flagClass = "noFlag";
+
+        if (props.char.code === "eighth") {
+          if (stemDirection === "upStem") {
+            if (offset === farthestUp) {
+              flag = flagCodes.eighth.up;
+              flagClass = "flagUp";
+            }
+          } else {
+            if (offset === farthestDown) {
+              flag = flagCodes.eighth.down;
+              flagClass = "flagDown";
+            }
+          }
+        }
+
+        if (props.char.code === "sixteenth") {
+          if (stemDirection === "upStem") {
+            if (offset === farthestUp) {
+              flag = flagCodes.sixteenth.up;
+              flagClass = "flagUp";
+            }
+          } else {
+            if (offset === farthestDown) {
+              flag = flagCodes.sixteenth.down;
+              flagClass = "flagDown";
+            }
+          }
+        }
 
         return (
-          <React.Fragment>
+          <div className="noteHead">
             {ledgerLines}
             <div className="noteHead" style={style}>
               {noteheadCodes[props.char.code]}
             </div>
             <div className={stemDirection} style={style}>
-              {stem}
+              {props.char.code === "whole" ? null : stem}
+              <div className={flagClass}>
+                {flag}
+              </div>
             </div>
-          </React.Fragment>
+          </div>
         );
       })}
-    </div>
+    </React.Fragment>
   );
 };
 

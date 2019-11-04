@@ -9,12 +9,7 @@
   width: calc(var(--music-font-size) * (var(--transform-size) / 2));
 }
 
-.text {
-  margin-right: -1px;
-  font-size: var(--music-font-size);
-  font-family: "Bravura";
-}
-
-.symbols .text {
-  margin-right: 15px;
+.system {
+  position: relative;
+  display: grid;
 }

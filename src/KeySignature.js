@@ -41,7 +41,7 @@ let KeySignature = ({ signature, clef, fontSize }) => {
     accidental = flatKeysignaturePositions;
   }
   for (let i = 0; i < signature.size; i++) {
-    let style = { marginTop: accidental[i] * fontSize + parseInt(offset) };
+    let style = { marginTop: accidental[i] * fontSize + parseFloat(offset) * fontSize };
     ret.push(
       <div className="keySignatureText" style={style}>
         {accidentalCodes[signature.type]}

@@ -3,14 +3,14 @@
 }
 .timeSignatureTextTop {
   position: absolute;
-  margin-top: -45px;
+  margin-top: calc(var(--music-font-size) * -0.75);
   font-size: var(--music-font-size);
   font-family: "Bravura";
   margin-left: 5px;
 }
 
 .timeSignatureTextBottom {
-  margin-top: -15px;
+  margin-top: calc(var(--music-font-size) * -0.25);
   font-size: var(--music-font-size);
   font-family: "Bravura";
   margin-right: 5px;

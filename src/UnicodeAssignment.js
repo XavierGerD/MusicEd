@@ -5,10 +5,20 @@ let stem = "\uE210";
 let missing;
 let empty;
 
+let flagCodes = {
+  eighth: { up: "\uE240", down: "\uE241" },
+  sixteenth: { up: "\uE242", down: "\uE243" }
+};
+
 let barlines = {
   startingBarline: "\uE034",
   finalBarline: "\uE032",
   singleBarline: "\uE030"
+};
+
+let beamCodes = {
+  begin: "\uE8E0",
+  end: "\uE8E1"
 };
 
 let timeSignatureCodes = {
@@ -60,5 +70,7 @@ export {
   noteheadCodes,
   accidentalCodes,
   timeSignatureCodes,
-  restCodes
+  restCodes,
+  flagCodes,
+  beamCodes
 };

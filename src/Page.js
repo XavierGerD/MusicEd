@@ -31,7 +31,7 @@ let Page = props => {
     return (
       <div className="staffConfig">
         <div className="barLineText">
-          {" "}{barlines.startingBarline}
+          {instrument === "piano" && clef === "treble" ? <div className="startBarLineDiv" /> : null} {}
         </div>
         {<Clef clef={clef} fontSize={props.state.fontSize} />}
         {<KeySignature signature={props.state.keySignature} clef={clef} fontSize={props.state.fontSize} />}
@@ -53,7 +53,7 @@ let Page = props => {
       if (j === 0 || (bars[i].length === 0 && j > 0)) {
         bars[i].push(staffConfig(j, i));
       }
-      bars[i].push(<Bar arr={barArray[i]} clef={clef} length={notes.length} index={j} state={props.state} />);
+      bars[i].push(<Bar arr={barArray[i]} clef={clef} length={notes.length} index={j} state={props.state} instrument={instrument} i={i} />);
       if (bars[i].length === props.state.maxBars) {
         staves.push(<System bars={bars[i]} />);
         bars[i] = [];
