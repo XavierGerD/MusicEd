@@ -1,6 +1,38 @@
 let appText = {
   instrument: "piano",
   notes: [
+    // [
+    //   [
+    //     { type: "note", code: "quarter", pitch: [{ note: "C", octave: 4 }] },
+    //     { type: "note", code: "quarter", pitch: [{ note: "D", octave: 4 }] },
+    //     { type: "note", code: "quarter", pitch: [{ note: "E", octave: 4 }] },
+    //     { type: "note", code: "quarter", pitch: [{ note: "F", octave: 4 }] }
+    //   ]
+    // ],
+    // [
+    //   [
+    //     { type: "note", code: "quarter", pitch: [{ note: "C", octave: 4 }] },
+    //     { type: "note", code: "quarter", pitch: [{ note: "D", octave: 4 }] },
+    //     { type: "note", code: "quarter", pitch: [{ note: "E", octave: 4 }] },
+    //     { type: "note", code: "quarter", pitch: [{ note: "F", octave: 4 }] }
+    //   ]
+    // ],
+    // [
+    //   [
+    //     { type: "note", code: "quarter", pitch: [{ note: "C", octave: 4 }] },
+    //     { type: "note", code: "quarter", pitch: [{ note: "D", octave: 4 }] },
+    //     { type: "note", code: "quarter", pitch: [{ note: "E", octave: 4 }] },
+    //     { type: "note", code: "quarter", pitch: [{ note: "F", octave: 4 }] }
+    //   ]
+    // ],
+    // [
+    //   [
+    //     { type: "note", code: "quarter", pitch: [{ note: "C", octave: 4 }] },
+    //     { type: "note", code: "quarter", pitch: [{ note: "D", octave: 4 }] },
+    //     { type: "note", code: "quarter", pitch: [{ note: "E", octave: 4 }] },
+    //     { type: "note", code: "quarter", pitch: [{ note: "F", octave: 4 }] }
+    //   ]
+    // ]
     [
       [
         { type: "rest", code: "quarter" },

@@ -7,12 +7,16 @@ import { barlines } from "./UnicodeAssignment.js";
 import { KeySignature } from "./KeySignature.js";
 import "./Page.css";
 
-let determineClef = hand => {
+let determineClef = (hand, instrument) => {
   let clef;
-  if (hand === 0) {
-    clef = "treble";
+  if (instrument === "piano") {
+    if (hand === 0) {
+      clef = "treble";
+    } else {
+      clef = "bass";
+    }
   } else {
-    clef = "bass";
+    clef = instrument;
   }
   return clef;
 };
@@ -24,14 +28,13 @@ let Page = props => {
   let notes = props.state.text.notes;
   let instrument = props.state.text.instrument;
   let staffConfig = (index, hand) => {
-    let clef;
-    if (instrument === "piano") {
-      clef = determineClef(hand);
-    }
+    let clef = determineClef(hand, instrument);
+
     return (
       <div className="staffConfig">
         <div className="barLineText">
-          {instrument === "piano" && clef === "treble" ? <div className="startBarLineDiv" /> : null} {}
+          {instrument === "piano" && clef === "treble" ? <div className="startBarLineDiv" /> : null}
+          {/* {instrument === "piano" && clef === "treble" ? <div className="startBarLineDiv" /> : null} {} */}
         </div>
         {<Clef clef={clef} fontSize={props.state.fontSize} />}
         {<KeySignature signature={props.state.keySignature} clef={clef} fontSize={props.state.fontSize} />}
@@ -46,10 +49,8 @@ let Page = props => {
 
   notes.forEach((barArray, j) => {
     barArray.forEach((arr, i) => {
-      let clef;
-      if (instrument === "piano") {
-        clef = determineClef(i);
-      }
+      let clef = determineClef(i, instrument);
+
       if (j === 0 || (bars[i].length === 0 && j > 0)) {
         bars[i].push(staffConfig(j, i));
       }
