@@ -6,7 +6,7 @@
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-scripts": "3.2.0",
-    "vexflow": "^1.2.89"
+    "vexflow": "^1.2.93"
   },
   "scripts": {
     "start": "react-scripts start",
